@@ -25,19 +25,23 @@ public class DisplayForPets {
     public ArrayList<Pet> createKindOfPets(int numberOfPetsOwned) {
         ArrayList<Pet> pet = new ArrayList<>();
         for (int i = 1; i <= numberOfPetsOwned; i++) {
-            System.out.println("What kind of animal is pet (dog, cat, or chicken) " + i + "?");
+            System.out.println("What kind of animal is pet " + i + " (dog, cat, or chicken)?");
             pleasePrintHere();
-            if (scanner.nextLine().toLowerCase().equals("dog")) {
-                System.out.println("What is the name of the pet?");
+            String typeOfPet = scanner.next();
+            if (typeOfPet.toLowerCase().equals("dog")) {
+                scanner.nextLine();
                 pleasePrintHere();
+                System.out.println("What is the name of the pet?");
                 pet.add(new Dog(scanner.nextLine()));
-            } else if (scanner.nextLine().toLowerCase().equals("cat")) {
-                System.out.println("What is the name of the pet?");
+            } else if (typeOfPet.toLowerCase().equals("cat")) {
+                scanner.nextLine();
                 pleasePrintHere();
+                System.out.println("What is the name of the pet?");
                 pet.add(new Cat(scanner.nextLine()));
-            } else if(scanner.nextLine().toLowerCase().equals("chicken")){
-                System.out.println("What is the name of the pet?");
+            } else if(typeOfPet.toLowerCase().toLowerCase().equals("chicken")){
+                scanner.nextLine();
                 pleasePrintHere();
+                System.out.println("What is the name of the pet?");
                 pet.add(new Chicken(scanner.nextLine()));
             } else {
                 System.out.println("Please enter dog, cat, or chicken for the kind of animal you own. ");
